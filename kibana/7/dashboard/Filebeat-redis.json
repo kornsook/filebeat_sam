@@ -1,0 +1,117 @@
+{
+    "objects": [
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"event.dataset:redis.log\"}, \"index\": \"filebeat-*\", \"version\": true, \"filter\": [], \"highlightAll\": true}"
+                },
+                "title": "Log levels and roles breakdown [Filebeat Redis] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"aggs\": [{\"params\": {}, \"enabled\": true, \"type\": \"count\", \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"redis.log.role\", \"size\": 5, \"order\": \"desc\"}, \"enabled\": true, \"type\": \"terms\", \"id\": \"3\", \"schema\": \"segment\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"log.level\", \"customLabel\": \"Log level\", \"order\": \"desc\", \"size\": 5}, \"enabled\": true, \"type\": \"terms\", \"id\": \"2\", \"schema\": \"segment\"}], \"type\": \"pie\", \"params\": {\"isDonut\": false, \"type\": \"pie\", \"addTooltip\": true, \"addLegend\": true, \"legendPosition\": \"bottom\"}, \"title\": \"Log levels and roles breakdown [Filebeat Redis] ECS\"}"
+            },
+            "id": "78b9afe0-478f-11e7-b1f0-cb29bac6bf8b-ecs",
+            "type": "visualization",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"event.dataset:redis.log\"}, \"index\": \"filebeat-*\", \"version\": true, \"filter\": [], \"highlightAll\": true}"
+                },
+                "title": "Logs over time [Filebeat Redis] ECS",
+                "uiStateJSON": "{\"vis\": {\"colors\": {\"warning\": \"#EF843C\", \"notice\": \"#629E51\"}}}",
+                "version": 1,
+                "visState": "{\"aggs\": [{\"params\": {}, \"enabled\": true, \"type\": \"count\", \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"customInterval\": \"2h\", \"interval\": \"auto\", \"min_doc_count\": 1, \"field\": \"@timestamp\", \"extended_bounds\": {}}, \"enabled\": true, \"type\": \"date_histogram\", \"id\": \"2\", \"schema\": \"segment\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"log.level\", \"size\": 5, \"order\": \"desc\"}, \"enabled\": true, \"type\": \"terms\", \"id\": \"3\", \"schema\": \"group\"}], \"type\": \"histogram\", \"params\": {\"seriesParams\": [{\"show\": \"true\", \"type\": \"histogram\", \"drawLinesBetweenPoints\": true, \"data\": {\"id\": \"1\", \"label\": \"Count\"}, \"mode\": \"stacked\", \"showCircles\": true, \"valueAxis\": \"ValueAxis-1\"}], \"defaultYExtents\": false, \"times\": [], \"categoryAxes\": [{\"show\": true, \"labels\": {\"show\": true, \"truncate\": 100}, \"title\": {\"text\": \"@timestamp per month\"}, \"id\": \"CategoryAxis-1\", \"scale\": {\"type\": \"linear\"}, \"position\": \"bottom\", \"type\": \"category\", \"style\": {}}], \"interpolate\": \"linear\", \"showCircles\": true, \"grid\": {\"categoryLines\": false, \"style\": {\"color\": \"#eee\"}}, \"addLegend\": true, \"setYExtents\": false, \"radiusRatio\": 9, \"type\": \"histogram\", \"scale\": \"linear\", \"addTooltip\": true, \"addTimeMarker\": false, \"valueAxes\": [{\"show\": true, \"labels\": {\"show\": true, \"filter\": false, \"rotate\": 0, \"truncate\": 100}, \"title\": {\"text\": \"Count\"}, \"id\": \"ValueAxis-1\", \"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"position\": \"left\", \"type\": \"value\", \"style\": {}, \"name\": \"LeftAxis-1\"}], \"legendPosition\": \"right\", \"drawLinesBetweenPoints\": true}, \"title\": \"Logs over time [Filebeat Redis] ECS\"}"
+            },
+            "id": "d2864600-478f-11e7-be88-2ddb32f3df97-ecs",
+            "type": "visualization",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "host.name",
+                    "log.level",
+                    "redis.log.role",
+                    "message"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"index\": \"filebeat-*\", \"version\": true, \"filter\": [{\"meta\": {\"disabled\": false, \"params\": {\"type\": \"phrase\", \"query\": \"redis\"}, \"type\": \"phrase\", \"value\": \"redis\", \"negate\": false, \"index\": \"filebeat-*\", \"key\": \"event.module\", \"alias\": null}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"event.module\": {\"type\": \"phrase\", \"query\": \"redis\"}}}}, {\"meta\": {\"disabled\": false, \"params\": {\"type\": \"phrase\", \"query\": \"log\"}, \"type\": \"phrase\", \"value\": \"log\", \"negate\": false, \"index\": \"filebeat-*\", \"key\": \"fileset.name\", \"alias\": null}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"fileset.name\": {\"type\": \"phrase\", \"query\": \"log\"}}}}], \"highlightAll\": true}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "Logs [Filebeat Redis] ECS",
+                "version": 1
+            },
+            "id": "73613570-4791-11e7-be88-2ddb32f3df97-ecs",
+            "type": "search",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": []}"
+                },
+                "savedSearchId": "0ab87b80-478e-11e7-b1f0-cb29bac6bf8b-ecs",
+                "title": "Top slowest commands [Filebeat Redis] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"aggs\": [{\"params\": {\"field\": \"redis.slowlog.duration.us\", \"customLabel\": \"Command\"}, \"enabled\": true, \"type\": \"max\", \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"redis.slowlog.cmd\", \"customLabel\": \"Duration (microseconds)\", \"order\": \"desc\", \"size\": 5}, \"enabled\": true, \"type\": \"terms\", \"id\": \"2\", \"schema\": \"segment\"}], \"type\": \"histogram\", \"params\": {\"seriesParams\": [{\"show\": true, \"type\": \"histogram\", \"drawLinesBetweenPoints\": true, \"data\": {\"id\": \"1\", \"label\": \"Command\"}, \"mode\": \"normal\", \"showCircles\": true, \"valueAxis\": \"ValueAxis-1\"}], \"defaultYExtents\": false, \"times\": [], \"categoryAxes\": [{\"show\": true, \"labels\": {\"show\": true, \"filter\": false, \"rotate\": 0, \"truncate\": 200}, \"title\": {\"text\": \"Duration (microseconds)\"}, \"id\": \"CategoryAxis-1\", \"scale\": {\"type\": \"linear\"}, \"position\": \"left\", \"type\": \"category\", \"style\": {}}], \"interpolate\": \"linear\", \"showCircles\": true, \"grid\": {\"categoryLines\": false, \"style\": {\"color\": \"#eee\"}}, \"addLegend\": true, \"setYExtents\": false, \"radiusRatio\": 9, \"type\": \"histogram\", \"scale\": \"linear\", \"addTooltip\": true, \"addTimeMarker\": false, \"valueAxes\": [{\"show\": true, \"labels\": {\"show\": true, \"filter\": true, \"rotate\": 75, \"truncate\": 100}, \"title\": {\"text\": \"Command\"}, \"id\": \"ValueAxis-1\", \"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"position\": \"bottom\", \"type\": \"value\", \"style\": {}, \"name\": \"LeftAxis-1\"}], \"legendPosition\": \"right\", \"drawLinesBetweenPoints\": true}, \"title\": \"Top slowest commands [Filebeat Redis] ECS\"}"
+            },
+            "id": "dcccaa80-4791-11e7-be88-2ddb32f3df97-ecs",
+            "type": "visualization",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "host.name",
+                    "message",
+                    "redis.slowlog.duration.us",
+                    "redis.slowlog.key"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"event.dataset:redis.slowlog\"}, \"index\": \"filebeat-*\", \"version\": true, \"filter\": [], \"highlightAll\": true}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "Slow logs [Filebeat Redis] ECS",
+                "version": 1
+            },
+            "id": "0ab87b80-478e-11e7-b1f0-cb29bac6bf8b-ecs",
+            "type": "search",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "description": "Overview dashboard for the FIlebeat Redis module",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"version\": true, \"filter\": [], \"highlightAll\": true}"
+                },
+                "optionsJSON": "{\"darkTheme\": false}",
+                "panelsJSON": "[{\"col\": 1, \"id\": \"78b9afe0-478f-11e7-b1f0-cb29bac6bf8b-ecs\", \"size_y\": 3, \"panelIndex\": 2, \"type\": \"visualization\", \"size_x\": 3, \"row\": 5}, {\"col\": 4, \"id\": \"d2864600-478f-11e7-be88-2ddb32f3df97-ecs\", \"size_y\": 3, \"panelIndex\": 3, \"type\": \"visualization\", \"size_x\": 9, \"row\": 5}, {\"sort\": [\"@timestamp\", \"desc\"], \"columns\": [\"host.name\", \"log.level\", \"redis.log.role\", \"message\"], \"col\": 1, \"id\": \"73613570-4791-11e7-be88-2ddb32f3df97-ecs\", \"size_y\": 4, \"panelIndex\": 4, \"type\": \"search\", \"size_x\": 12, \"row\": 8}, {\"col\": 7, \"id\": \"dcccaa80-4791-11e7-be88-2ddb32f3df97-ecs\", \"size_y\": 4, \"panelIndex\": 5, \"type\": \"visualization\", \"size_x\": 6, \"row\": 1}, {\"sort\": [\"@timestamp\", \"desc\"], \"columns\": [\"host.name\", \"message\", \"redis.slowlog.duration.us\", \"redis.slowlog.key\"], \"col\": 1, \"id\": \"0ab87b80-478e-11e7-b1f0-cb29bac6bf8b-ecs\", \"size_y\": 4, \"panelIndex\": 6, \"type\": \"search\", \"size_x\": 6, \"row\": 1}]",
+                "timeRestore": false,
+                "title": "[Filebeat Redis] Overview ECS",
+                "uiStateJSON": "{\"P-5\": {\"vis\": {\"legendOpen\": false}}}",
+                "version": 1
+            },
+            "id": "7fea2930-478e-11e7-b1f0-cb29bac6bf8b-ecs",
+            "type": "dashboard",
+            "version": 4
+        }
+    ],
+    "version": "6.0.0-beta1-SNAPSHOT"
+}

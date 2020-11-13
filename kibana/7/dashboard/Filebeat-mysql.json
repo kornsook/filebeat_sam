@@ -1,0 +1,146 @@
+{
+    "objects": [
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": []}"
+                },
+                "savedSearchId": "Filebeat-MySQL-Slow-log-ecs",
+                "title": "Top slowest queries [Filebeat MySQL] ECS",
+                "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"direction\": null, \"columnIndex\": null}}}}",
+                "version": 1,
+                "visState": "{\"aggs\": [{\"params\": {\"field\": \"event.duration\", \"customLabel\": \"Query time\"}, \"enabled\": true, \"type\": \"max\", \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"mysql.slowlog.query\", \"customLabel\": \"Query\", \"order\": \"desc\", \"size\": 5}, \"enabled\": true, \"type\": \"terms\", \"id\": \"2\", \"schema\": \"bucket\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"user.name\", \"customLabel\": \"User\", \"order\": \"desc\", \"size\": 5}, \"enabled\": true, \"type\": \"terms\", \"id\": \"3\", \"schema\": \"bucket\"}], \"type\": \"table\", \"params\": {\"totalFunc\": \"sum\", \"showMeticsAtAllLevels\": false, \"showPartialRows\": false, \"perPage\": 10, \"showTotal\": false, \"sort\": {\"direction\": null, \"columnIndex\": null}}, \"title\": \"Top slowest queries [Filebeat MySQL] ECS\"}"
+            },
+            "id": "MySQL-slowest-queries-ecs",
+            "type": "visualization",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": []}"
+                },
+                "savedSearchId": "Filebeat-MySQL-Slow-log-ecs",
+                "title": "Slow queries over time [Filebeat MySQL] ECS",
+                "uiStateJSON": "{\"vis\": {\"colors\": {\"Slow queries\": \"#EF843C\"}}}",
+                "version": 1,
+                "visState": "{\"aggs\": [{\"params\": {\"customLabel\": \"Slow queries\"}, \"enabled\": true, \"type\": \"count\", \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"customInterval\": \"2h\", \"interval\": \"auto\", \"min_doc_count\": 1, \"field\": \"@timestamp\", \"extended_bounds\": {}}, \"enabled\": true, \"type\": \"date_histogram\", \"id\": \"2\", \"schema\": \"segment\"}], \"type\": \"histogram\", \"params\": {\"seriesParams\": [{\"show\": \"true\", \"type\": \"histogram\", \"drawLinesBetweenPoints\": true, \"data\": {\"id\": \"1\", \"label\": \"Slow queries\"}, \"mode\": \"stacked\", \"showCircles\": true, \"valueAxis\": \"ValueAxis-1\"}], \"defaultYExtents\": false, \"times\": [], \"categoryAxes\": [{\"show\": true, \"labels\": {\"show\": true, \"truncate\": 100}, \"title\": {\"text\": \"@timestamp per 30 seconds\"}, \"id\": \"CategoryAxis-1\", \"scale\": {\"type\": \"linear\"}, \"position\": \"bottom\", \"type\": \"category\", \"style\": {}}], \"grid\": {\"categoryLines\": false, \"style\": {\"color\": \"#eee\"}}, \"shareYAxis\": true, \"yAxis\": {}, \"addLegend\": true, \"addTimeMarker\": false, \"type\": \"histogram\", \"scale\": \"linear\", \"addTooltip\": true, \"setYExtents\": false, \"valueAxes\": [{\"show\": true, \"labels\": {\"show\": true, \"filter\": false, \"rotate\": 0, \"truncate\": 100}, \"title\": {\"text\": \"Slow queries\"}, \"id\": \"ValueAxis-1\", \"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"position\": \"left\", \"type\": \"value\", \"style\": {}, \"name\": \"LeftAxis-1\"}], \"mode\": \"stacked\", \"legendPosition\": \"right\"}, \"title\": \"Slow queries over time [Filebeat MySQL] ECS\"}"
+            },
+            "id": "MySQL-Slow-queries-over-time-ecs",
+            "type": "visualization",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": []}"
+                },
+                "savedSearchId": "Filebeat-MySQL-error-log-ecs",
+                "title": "Error logs over time [Filebeat MySQL] ECS",
+                "uiStateJSON": "{\"vis\": {\"colors\": {\"Error logs\": \"#1F78C1\", \"Count\": \"#447EBC\"}}}",
+                "version": 1,
+                "visState": "{\"aggs\": [{\"params\": {\"customLabel\": \"Error logs\"}, \"enabled\": true, \"type\": \"count\", \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"customInterval\": \"2h\", \"interval\": \"auto\", \"min_doc_count\": 1, \"field\": \"@timestamp\", \"extended_bounds\": {}}, \"enabled\": true, \"type\": \"date_histogram\", \"id\": \"2\", \"schema\": \"segment\"}], \"type\": \"histogram\", \"params\": {\"seriesParams\": [{\"show\": \"true\", \"type\": \"histogram\", \"drawLinesBetweenPoints\": true, \"data\": {\"id\": \"1\", \"label\": \"Error logs\"}, \"mode\": \"stacked\", \"showCircles\": true, \"valueAxis\": \"ValueAxis-1\"}], \"defaultYExtents\": false, \"times\": [], \"categoryAxes\": [{\"show\": true, \"labels\": {\"show\": true, \"truncate\": 100}, \"title\": {\"text\": \"@timestamp per 30 seconds\"}, \"id\": \"CategoryAxis-1\", \"scale\": {\"type\": \"linear\"}, \"position\": \"bottom\", \"type\": \"category\", \"style\": {}}], \"grid\": {\"categoryLines\": false, \"style\": {\"color\": \"#eee\"}}, \"shareYAxis\": true, \"yAxis\": {}, \"addLegend\": true, \"addTimeMarker\": false, \"type\": \"histogram\", \"scale\": \"linear\", \"addTooltip\": true, \"setYExtents\": false, \"valueAxes\": [{\"show\": true, \"labels\": {\"show\": true, \"filter\": false, \"rotate\": 0, \"truncate\": 100}, \"title\": {\"text\": \"Error logs\"}, \"id\": \"ValueAxis-1\", \"scale\": {\"mode\": \"normal\", \"type\": \"linear\"}, \"position\": \"left\", \"type\": \"value\", \"style\": {}, \"name\": \"LeftAxis-1\"}], \"mode\": \"stacked\", \"legendPosition\": \"right\"}, \"title\": \"Error logs over time [Filebeat MySQL] ECS\"}"
+            },
+            "id": "MySQL-error-logs-ecs",
+            "type": "visualization",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "log.level",
+                    "message"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"highlight\": {\"post_tags\": [\"@/kibana-highlighted-field@\"], \"fragment_size\": 2147483647, \"require_field_match\": false, \"pre_tags\": [\"@kibana-highlighted-field@\"], \"fields\": {\"*\": {}}}, \"highlightAll\": true, \"filter\": [{\"meta\": {\"disabled\": false, \"params\": {\"type\": \"phrase\", \"query\": \"mysql\"}, \"type\": \"phrase\", \"value\": \"mysql\", \"negate\": false, \"index\": \"filebeat-*\", \"key\": \"event.module\", \"alias\": null}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"event.module\": {\"type\": \"phrase\", \"query\": \"mysql\"}}}}, {\"meta\": {\"disabled\": false, \"params\": {\"type\": \"phrase\", \"query\": \"error\"}, \"type\": \"phrase\", \"value\": \"error\", \"negate\": false, \"index\": \"filebeat-*\", \"key\": \"fileset.name\", \"alias\": null}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"fileset.name\": {\"type\": \"phrase\", \"query\": \"error\"}}}}], \"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"version\": true}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "Error logs [Filebeat MySQL] ECS",
+                "version": 1
+            },
+            "id": "Filebeat-MySQL-error-log-ecs",
+            "type": "search",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": []}"
+                },
+                "savedSearchId": "Filebeat-MySQL-error-log-ecs",
+                "title": "Error logs levels breakdown [Filebeat MySQL] ECS",
+                "uiStateJSON": "{\"vis\": {\"colors\": {\"Note\": \"#9AC48A\", \"Warning\": \"#F9934E\", \"ERROR\": \"#E24D42\"}}}",
+                "version": 1,
+                "visState": "{\"aggs\": [{\"params\": {}, \"enabled\": true, \"type\": \"count\", \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"log.level\", \"size\": 5, \"order\": \"desc\"}, \"enabled\": true, \"type\": \"terms\", \"id\": \"2\", \"schema\": \"segment\"}], \"type\": \"pie\", \"params\": {\"isDonut\": false, \"type\": \"pie\", \"addTooltip\": true, \"shareYAxis\": true, \"legendPosition\": \"bottom\", \"addLegend\": true}, \"title\": \"Error logs levels breakdown [Filebeat MySQL] ECS\"}"
+            },
+            "id": "MySQL-Error-logs-levels-ecs",
+            "type": "visualization",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": []}"
+                },
+                "savedSearchId": "Filebeat-MySQL-Slow-log-ecs",
+                "title": "Slow logs breakdown [Filebeat MySQL] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"aggs\": [{\"params\": {}, \"enabled\": true, \"type\": \"count\", \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"mysql.slowlog.query\", \"size\": 5, \"order\": \"desc\"}, \"enabled\": true, \"type\": \"terms\", \"id\": \"2\", \"schema\": \"segment\"}], \"type\": \"pie\", \"params\": {\"isDonut\": false, \"type\": \"pie\", \"addTooltip\": true, \"shareYAxis\": true, \"legendPosition\": \"bottom\", \"addLegend\": true}, \"title\": \"Slow logs breakdown [Filebeat MySQL] ECS\"}"
+            },
+            "id": "MySQL-Slow-logs-by-count-ecs",
+            "type": "visualization",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "_source"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"highlight\": {\"post_tags\": [\"@/kibana-highlighted-field@\"], \"fragment_size\": 2147483647, \"require_field_match\": false, \"pre_tags\": [\"@kibana-highlighted-field@\"], \"fields\": {\"*\": {}}}, \"highlightAll\": true, \"filter\": [{\"meta\": {\"disabled\": false, \"params\": {\"type\": \"phrase\", \"query\": \"mysql\"}, \"type\": \"phrase\", \"value\": \"mysql\", \"negate\": false, \"index\": \"filebeat-*\", \"key\": \"event.module\", \"alias\": null}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"event.module\": {\"type\": \"phrase\", \"query\": \"mysql\"}}}}, {\"meta\": {\"disabled\": false, \"params\": {\"type\": \"phrase\", \"query\": \"slowlog\"}, \"type\": \"phrase\", \"value\": \"slowlog\", \"negate\": false, \"index\": \"filebeat-*\", \"key\": \"fileset.name\", \"alias\": null}, \"$state\": {\"store\": \"appState\"}, \"query\": {\"match\": {\"fileset.name\": {\"type\": \"phrase\", \"query\": \"slowlog\"}}}}], \"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"version\": true}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "Slow logs [Filebeat MySQL] ECS",
+                "version": 1
+            },
+            "id": "Filebeat-MySQL-Slow-log-ecs",
+            "type": "search",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "description": "Overview dashboard for the Filebeat MySQL module",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"version\": true, \"filter\": [], \"highlightAll\": true}"
+                },
+                "optionsJSON": "{\"darkTheme\": false}",
+                "panelsJSON": "[{\"col\": 1, \"id\": \"MySQL-slowest-queries-ecs\", \"size_y\": 4, \"panelIndex\": 1, \"type\": \"visualization\", \"size_x\": 6, \"row\": 8}, {\"col\": 1, \"id\": \"MySQL-Slow-queries-over-time-ecs\", \"size_y\": 3, \"panelIndex\": 2, \"type\": \"visualization\", \"size_x\": 6, \"row\": 1}, {\"col\": 7, \"id\": \"MySQL-error-logs-ecs\", \"size_y\": 3, \"panelIndex\": 3, \"type\": \"visualization\", \"size_x\": 6, \"row\": 1}, {\"sort\": [\"@timestamp\", \"desc\"], \"columns\": [\"log.level\", \"message\"], \"col\": 7, \"id\": \"Filebeat-MySQL-error-log-ecs\", \"size_y\": 5, \"panelIndex\": 4, \"type\": \"search\", \"size_x\": 6, \"row\": 8}, {\"col\": 7, \"id\": \"MySQL-Error-logs-levels-ecs\", \"size_y\": 4, \"panelIndex\": 5, \"type\": \"visualization\", \"size_x\": 6, \"row\": 4}, {\"col\": 1, \"id\": \"MySQL-Slow-logs-by-count-ecs\", \"size_y\": 4, \"panelIndex\": 6, \"type\": \"visualization\", \"size_x\": 6, \"row\": 4}]",
+                "timeRestore": false,
+                "title": "[Filebeat MySQL] Overview ECS",
+                "uiStateJSON": "{\"P-1\": {\"vis\": {\"params\": {\"sort\": {\"direction\": null, \"columnIndex\": null}}}}}",
+                "version": 1
+            },
+            "id": "Filebeat-MySQL-Dashboard-ecs",
+            "type": "dashboard",
+            "version": 2
+        }
+    ],
+    "version": "6.0.0-beta1-SNAPSHOT"
+}

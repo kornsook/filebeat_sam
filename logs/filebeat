@@ -1,0 +1,2 @@
+2020-10-30T15:35:49.269-0500	INFO	instance/beat.go:640	Home path: [/home/ykcentos/filebeat-7.9.3-linux-x86_64] Config path: [/home/ykcentos/filebeat-7.9.3-linux-x86_64] Data path: [/home/ykcentos/filebeat-7.9.3-linux-x86_64/data] Logs path: [/home/ykcentos/filebeat-7.9.3-linux-x86_64/logs]
+2020-10-30T15:35:49.269-0500	INFO	instance/beat.go:648	Beat ID: 52d91c1f-9f6e-45ec-a203-dcef42b67243

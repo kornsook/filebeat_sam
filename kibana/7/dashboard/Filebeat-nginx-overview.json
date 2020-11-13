@@ -1,0 +1,169 @@
+{
+    "objects": [
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"index\": \"filebeat-*\", \"filter\": []}"
+                },
+                "title": "Browsers breakdown [Filebeat Nginx] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"aggs\": [{\"params\": {}, \"enabled\": true, \"type\": \"count\", \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"user_agent.name\", \"size\": 5, \"order\": \"desc\"}, \"enabled\": true, \"type\": \"terms\", \"id\": \"2\", \"schema\": \"segment\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"user_agent.version\", \"size\": 5, \"order\": \"desc\"}, \"enabled\": true, \"type\": \"terms\", \"id\": \"3\", \"schema\": \"segment\"}], \"type\": \"pie\", \"params\": {\"isDonut\": true, \"shareYAxis\": true, \"addTooltip\": true, \"addLegend\": true, \"legendPosition\": \"bottom\"}, \"title\": \"Nginx Access Browsers ECS\", \"listeners\": {}}"
+            },
+            "id": "Nginx-Access-Browsers-ecs",
+            "type": "visualization",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"index\": \"filebeat-*\", \"filter\": []}"
+                },
+                "title": "Operating systems breakdown [Filebeat Nginx] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"aggs\": [{\"params\": {}, \"enabled\": true, \"type\": \"count\", \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"user_agent.os.name\", \"size\": 5, \"order\": \"desc\"}, \"enabled\": true, \"type\": \"terms\", \"id\": \"2\", \"schema\": \"segment\"}, {\"params\": {\"orderBy\": \"1\", \"field\": \"user_agent.os.version\", \"size\": 5, \"order\": \"desc\"}, \"enabled\": true, \"type\": \"terms\", \"id\": \"3\", \"schema\": \"segment\"}], \"type\": \"pie\", \"params\": {\"isDonut\": true, \"shareYAxis\": true, \"addTooltip\": true, \"addLegend\": true, \"legendPosition\": \"bottom\"}, \"title\": \"Nginx Access OSes ECS\", \"listeners\": {}}"
+            },
+            "id": "Nginx-Access-OSes-ecs",
+            "type": "visualization",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": []}"
+                },
+                "savedSearchId": "Filebeat-Nginx-module-ecs",
+                "title": "Access Map [Filebeat Nginx] ECS",
+                "uiStateJSON": "{\"mapCenter\": [12.039320557540572, -0.17578125]}",
+                "version": 1,
+                "visState": "{\"aggs\": [{\"params\": {}, \"enabled\": true, \"type\": \"count\", \"id\": \"1\", \"schema\": \"metric\"}, {\"params\": {\"autoPrecision\": true, \"field\": \"source.geo.location\"}, \"enabled\": true, \"type\": \"geohash_grid\", \"id\": \"2\", \"schema\": \"segment\"}], \"type\": \"tile_map\", \"params\": {\"isDesaturated\": true, \"mapCenter\": [15, 5], \"mapType\": \"Scaled Circle Markers\", \"mapZoom\": 2, \"heatBlur\": 15, \"heatRadius\": 25, \"heatMinOpacity\": 0.1, \"heatMaxZoom\": 16, \"heatNormalizeData\": true, \"addTooltip\": true, \"wms\": {\"enabled\": false, \"url\": \"https://basemap.nationalmap.gov/arcgis/services/USGSTopo/MapServer/WMSServer\", \"options\": {\"attribution\": \"Maps provided by USGS\", \"styles\": \"\", \"version\": \"1.3.0\", \"transparent\": true, \"layers\": \"0\", \"format\": \"image/png\"}}, \"legendPosition\": \"bottomright\"}, \"title\": \"Nginx Access Map ECS\", \"listeners\": {}}"
+            },
+            "id": "Nginx-Access-Map-ecs",
+            "type": "visualization",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{}"
+                },
+                "title": "Response codes over time [Filebeat Nginx] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"aggs\": [], \"type\": \"metrics\", \"params\": {\"show_grid\": 1, \"legend_position\": \"bottom\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"interval\": \"auto\", \"axis_position\": \"left\", \"time_field\": \"@timestamp\", \"index_pattern\": \"filebeat-*\", \"show_legend\": 1, \"type\": \"timeseries\", \"series\": [{\"split_mode\": \"filters\", \"stacked\": \"stacked\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"point_size\": 1, \"split_filters\": [{\"filter\": \"http.response.status_code:[200 TO 299]\", \"color\": \"#68BC00\", \"label\": \"200s\", \"id\": \"5acdc750-a29d-11e7-a062-a1c3587f4874\"}, {\"filter\": \"http.response.status_code:[300 TO 399]\", \"color\": \"rgba(252,196,0,1)\", \"label\": \"300s\", \"id\": \"6efd2ae0-a29d-11e7-a062-a1c3587f4874\"}, {\"filter\": \"http.response.status_code:[400 TO 499]\", \"color\": \"rgba(211,49,21,1)\", \"label\": \"400s\", \"id\": \"76089a90-a29d-11e7-a062-a1c3587f4874\"}, {\"filter\": \"http.response.status_code:[500 TO 599]\", \"color\": \"rgba(171,20,158,1)\", \"label\": \"500s\", \"id\": \"7c7929d0-a29d-11e7-a062-a1c3587f4874\"}], \"seperate_axis\": 0, \"axis_position\": \"right\", \"color\": \"#68BC00\", \"metrics\": [{\"type\": \"count\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"chart_type\": \"bar\", \"terms_field\": \"http.response.status_code\", \"label\": \"\", \"formatter\": \"number\", \"terms_order_by\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"fill\": 0.5, \"line_width\": 1}], \"axis_formatter\": \"number\", \"filter\": \"event.module:nginx AND fileset.name:access\"}, \"title\": \"Response codes over time [Filebeat Nginx] ECS\"}"
+            },
+            "id": "b70b1b20-a1f4-11e7-928f-5dbe6f6f5519-ecs",
+            "type": "visualization",
+            "version": 7
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{}"
+                },
+                "title": "Top pages [Filebeat Nginx] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"aggs\": [], \"type\": \"metrics\", \"params\": {\"show_grid\": 1, \"index_pattern\": \"filebeat-*\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"interval\": \"auto\", \"axis_position\": \"left\", \"time_field\": \"@timestamp\", \"bar_color_rules\": [{\"id\": \"6252c320-a1f5-11e7-92ba-5d0b8663aece\"}], \"show_legend\": 1, \"type\": \"top_n\", \"series\": [{\"stacked\": \"none\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"split_mode\": \"terms\", \"terms_field\": \"url.original\", \"seperate_axis\": 0, \"axis_position\": \"right\", \"point_size\": 1, \"color\": \"#68BC00\", \"metrics\": [{\"type\": \"count\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"chart_type\": \"line\", \"value_template\": \"\", \"formatter\": \"number\", \"terms_order_by\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"fill\": 0.5, \"line_width\": 1}], \"axis_formatter\": \"number\", \"filter\": \"event.module:nginx AND fileset.name:access\"}, \"title\": \"Top pages [Filebeat Nginx] ECS\"}"
+            },
+            "id": "9184fa00-a1f5-11e7-928f-5dbe6f6f5519-ecs",
+            "type": "visualization",
+            "version": 3
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{}"
+                },
+                "title": "Errors over time [Filebeat Nginx] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"aggs\": [], \"type\": \"metrics\", \"params\": {\"show_grid\": 1, \"legend_position\": \"bottom\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"interval\": \"auto\", \"axis_position\": \"left\", \"time_field\": \"@timestamp\", \"index_pattern\": \"filebeat-*\", \"show_legend\": 1, \"type\": \"timeseries\", \"series\": [{\"stacked\": \"none\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"split_mode\": \"terms\", \"terms_field\": \"log.level\", \"seperate_axis\": 0, \"axis_position\": \"right\", \"point_size\": 1, \"color\": \"rgba(211,49,21,1)\", \"metrics\": [{\"type\": \"count\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"chart_type\": \"bar\", \"formatter\": \"number\", \"terms_order_by\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"fill\": 0.5, \"line_width\": 1}], \"axis_formatter\": \"number\", \"filter\": \"event.module:nginx AND fileset.name:error\"}, \"title\": \"Errors over time [Filebeat Nginx] ECS\"}"
+            },
+            "id": "46322e50-a1f6-11e7-928f-5dbe6f6f5519-ecs",
+            "type": "visualization",
+            "version": 5
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{}"
+                },
+                "title": "Data Volume [Filebeat Nginx] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"aggs\": [], \"type\": \"metrics\", \"params\": {\"show_grid\": 1, \"legend_position\": \"bottom\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"interval\": \"auto\", \"axis_position\": \"left\", \"time_field\": \"@timestamp\", \"index_pattern\": \"filebeat-*\", \"show_legend\": 1, \"type\": \"timeseries\", \"series\": [{\"split_mode\": \"everything\", \"stacked\": \"none\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"point_size\": 1, \"split_filters\": [{\"filter\": \"http.response.status_code:[200 TO 299]\", \"color\": \"#68BC00\", \"label\": \"200s\", \"id\": \"7c343c20-a29e-11e7-a062-a1c3587f4874\"}], \"seperate_axis\": 0, \"axis_position\": \"right\", \"color\": \"#68BC00\", \"metrics\": [{\"field\": \"http.response.body.bytes\", \"type\": \"sum\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"chart_type\": \"line\", \"terms_field\": null, \"label\": \"\", \"formatter\": \"bytes\", \"fill\": 0.5, \"line_width\": 1}], \"axis_formatter\": \"number\", \"filter\": \"event.module: nginx AND fileset.name: access\"}, \"title\": \"Data Volume [Filebeat Nginx] ECS\"}"
+            },
+            "id": "0dd6f320-a29f-11e7-928f-5dbe6f6f5519-ecs",
+            "type": "visualization",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{}"
+                },
+                "title": "Dashboards [Filebeat Nginx] ECS",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"aggs\": [], \"type\": \"markdown\", \"params\": {\"markdown\": \"[Nginx logs overview](#/dashboard/55a9e6e0-a29e-11e7-928f-5dbe6f6f5519-ecs) | [Nginx access and error logs](#/dashboard/046212a0-a2a1-11e7-928f-5dbe6f6f5519-ecs)\", \"fontSize\": 12}, \"title\": \"Dashboards [Filebeat Nginx] ECS\"}"
+            },
+            "id": "97109780-a2a5-11e7-928f-5dbe6f6f5519-ecs",
+            "type": "visualization",
+            "version": 1
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "url.original",
+                    "http.request.method",
+                    "http.response.status_code",
+                    "http.request.referrer",
+                    "http.response.body.bytes"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"highlight\": {\"post_tags\": [\"@/kibana-highlighted-field@\"], \"fragment_size\": 2147483647, \"require_field_match\": false, \"pre_tags\": [\"@kibana-highlighted-field@\"], \"fields\": {\"*\": {}}}, \"highlightAll\": true, \"filter\": [], \"index\": \"filebeat-*\", \"query\": {\"language\": \"kuery\", \"query\": \"event.module:nginx\"}, \"version\": true}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "Nginx logs [Filebeat Nginx] ECS",
+                "version": 1
+            },
+            "id": "Filebeat-Nginx-module-ecs",
+            "type": "search",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "description": "Dashboard for the Filebeat Nginx module",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"query\": {\"language\": \"kuery\", \"query\": \"\"}, \"version\": true, \"filter\": [], \"highlightAll\": true}"
+                },
+                "optionsJSON": "{\"darkTheme\": false}",
+                "panelsJSON": "[{\"col\": 10, \"id\": \"Nginx-Access-Browsers-ecs\", \"size_y\": 3, \"panelIndex\": 3, \"type\": \"visualization\", \"size_x\": 3, \"row\": 12}, {\"col\": 7, \"id\": \"Nginx-Access-OSes-ecs\", \"size_y\": 3, \"panelIndex\": 4, \"type\": \"visualization\", \"size_x\": 3, \"row\": 12}, {\"col\": 1, \"id\": \"Nginx-Access-Map-ecs\", \"size_y\": 4, \"panelIndex\": 8, \"type\": \"visualization\", \"size_x\": 12, \"row\": 2}, {\"col\": 1, \"id\": \"b70b1b20-a1f4-11e7-928f-5dbe6f6f5519-ecs\", \"size_y\": 3, \"panelIndex\": 13, \"type\": \"visualization\", \"size_x\": 12, \"row\": 6}, {\"col\": 7, \"id\": \"9184fa00-a1f5-11e7-928f-5dbe6f6f5519-ecs\", \"size_y\": 3, \"panelIndex\": 14, \"type\": \"visualization\", \"size_x\": 6, \"row\": 9}, {\"col\": 1, \"id\": \"46322e50-a1f6-11e7-928f-5dbe6f6f5519-ecs\", \"size_y\": 3, \"panelIndex\": 15, \"type\": \"visualization\", \"size_x\": 6, \"row\": 9}, {\"col\": 1, \"id\": \"0dd6f320-a29f-11e7-928f-5dbe6f6f5519-ecs\", \"size_y\": 3, \"panelIndex\": 16, \"type\": \"visualization\", \"size_x\": 6, \"row\": 12}, {\"col\": 1, \"id\": \"97109780-a2a5-11e7-928f-5dbe6f6f5519-ecs\", \"size_y\": 1, \"panelIndex\": 17, \"type\": \"visualization\", \"size_x\": 12, \"row\": 1}]",
+                "timeRestore": false,
+                "title": "[Filebeat Nginx] Overview ECS",
+                "uiStateJSON": "{\"P-8\": {\"mapCenter\": [50.51342652633956, -0.17578125], \"mapBounds\": {\"top_left\": {\"lon\": -245.74218750000003, \"lat\": 77.07878389624943}, \"bottom_right\": {\"lon\": 245.39062500000003, \"lat\": -7.362466865535738}}, \"mapCollar\": {\"top_left\": {\"lon\": -180, \"lat\": 90}, \"bottom_right\": {\"lon\": 180, \"lat\": -49.583095}, \"zoom\": 2}, \"mapZoom\": 2}, \"P-4\": {\"vis\": {\"legendOpen\": true}}}",
+                "version": 1
+            },
+            "id": "55a9e6e0-a29e-11e7-928f-5dbe6f6f5519-ecs",
+            "type": "dashboard",
+            "version": 6
+        }
+    ],
+    "version": "6.0.0-beta2"
+}
