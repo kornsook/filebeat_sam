@@ -40,7 +40,7 @@ filebeat.inputs:
     - /var/log/mysql/mysql.general_log
     #- c:\programdata\elasticsearch\logs\*
   fields:
-          module: mysql
+          module: mysql.sam
           client: sam
 - type: log
 
@@ -228,6 +228,7 @@ output.elasticsearch:
   # Array of hosts to connect to.
   hosts: ["192.168.7.34:9200"]
   index: "filebeat-%{[agent.version]}-%{[fields.client]}-%{[fields.module]}-%{+yyyy.MM.dd}"
+  pipeline: "%{[fields.module]}"
   #indices:
   #        - index: "filebeat-%{[agent.version]}-apache-%{+yyyy.MM.dd}"
   #          when.equals:
