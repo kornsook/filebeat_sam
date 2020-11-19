@@ -226,7 +226,7 @@ setup.kibana:
 # ---------------------------- Elasticsearch Output ----------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["192.168.7.34:9200"]
+  hosts: ["192.168.7.35:9200"]
   index: "filebeat-%{[agent.version]}-%{[fields.client]}-%{[fields.module]}-%{+yyyy.MM.dd}"
   pipeline: "%{[fields.module]}"
   #indices:
